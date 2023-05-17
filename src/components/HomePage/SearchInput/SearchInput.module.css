@@ -1,0 +1,32 @@
+
+.inputWrapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+}
+
+.input{
+    color:  grey;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 1020px;
+    text-indent: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+input:focus{
+    color:  grey;
+}
+.input::placeholder{
+    /*padding-left: 40px;*/
+    color:  grey;
+}
+
+.iconInput{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+}
