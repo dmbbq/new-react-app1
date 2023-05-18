@@ -7,27 +7,24 @@ import s from './../HomePage/Container/Container.module.css'
 const HomePage = () => {
 
     let [pageNumber, setPageNumber] = useState(1)
-    let [fetchedData, updateFetchedData] = useState([])
+    let [cards, setCards] = useState([])
     let [search, setSearch] = useState("")
 
-    let {info, results} = fetchedData
-
     let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
-
+    const getCardsRequest = async () => {
+         return  await fetch(api).then(res=>res.json()).then((data) => {
+             setCards(data.results)
+         })
+    }
     useEffect (()=>{
-
-        (async function(){
-            let data = await fetch(api).then(res=>res.json())
-            updateFetchedData(data)
-        }) ()
-
-    }, [api])
+        getCardsRequest()
+    }, [])
 
     return (
         <div className={s.container}>
             <Header />
             <SearchInput />
-            <CardList  page='/' results={results}  />
+            <CardList  page='/' results={cards}  />
 
 
         </div>

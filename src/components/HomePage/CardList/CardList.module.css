@@ -30,6 +30,7 @@ body {
 }
 /* div info about avatar*/
 .info{
+
     width: 240px;
    padding: 15px 16px;
     background: #FFFFFF;
@@ -39,7 +40,10 @@ body {
 }
 /* name avatar */
 .name{
-
+    overflow: hidden; /* Сховати зайвий текст, який не поміщається */
+    text-overflow: ellipsis; /* Додати мітку "..." в кінці, якщо текст обрізається */
+    white-space: nowrap; /* Відображати текст в одному рядку */
+    max-width: 200px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
